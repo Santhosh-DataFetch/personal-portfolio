@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santhosh S — AI &amp; Data Science | Data Analytics | AI Developer</title>
+  <meta name="description" content="Portfolio of Santhosh S, a B.Sc. Artificial Intelligence &amp; Data Science student and Founder &amp; Lead Developer of SASH AI, with projects in data analytics, machine learning, generative AI, Power BI, and backend development." />
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <!-- Preconnect + Google Fonts (Space Grotesk for headings, Inter for body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating particles background canvas -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Certificate Modal / Lightbox -->
+  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" hidden>
+    <div class="cert-modal__backdrop" id="certModalBackdrop"></div>
+    <div class="cert-modal__inner glass">
+      <button class="cert-modal__close" id="certModalClose" aria-label="Close certificate">&times;</button>
+      <div class="cert-modal__img-wrap">
+        <img id="certModalImg" src="" alt="" />
+      </div>
+      <div class="cert-modal__info">
+        <h3 id="certModalTitle"></h3>
+        <p id="certModalMeta"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header>
+    <nav class="nav" id="navbar" aria-label="Primary">
+      <a href="#hero" class="nav__logo">S<span>.</span></a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__content reveal">
+        <div class="hero__avatar">
+          <img src="images/profile.jpeg" alt="Portrait of Santhosh S" width="180" height="180" />
+        </div>
+        <p class="hero__eyebrow">AI &amp; Data Science &nbsp;·&nbsp; Analytics &nbsp;·&nbsp; AI Developer</p>
+        <h1 class="hero__title">Hi, I&apos;m <span class="accent">Santhosh S</span></h1>
+        <h2 class="hero__subtitle">
+          <span id="typed"></span><span class="cursor" aria-hidden="true">|</span>
+        </h2>
+        <p class="hero__intro">
+          B.Sc. Artificial Intelligence &amp; Data Science student and Founder &amp; Lead Developer of
+          <strong>SASH AI</strong> — with hands-on experience in data analytics, machine learning,
+          generative AI, backend development, and business intelligence.
+          I work with Python, SQL, Power BI, FastAPI, and more to build systems that turn data into impact.
+        </p>
+        <div class="hero__actions">
+          <a href="resume.pdf" class="btn btn--glow" download>Download Resume</a>
+          <a href="#projects" class="btn btn--outline">View Projects</a>
+          <a href="#contact" class="btn btn--ghost">Contact Me</a>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about section">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <p class="section__tag">01 &mdash; About</p>
+        <h2 class="section__title">About Me</h2>
+      </div>
+
+      <div class="about reveal">
+        <div class="glass about__card">
+          <p>
+            I am currently pursuing a <strong>B.Sc. in Artificial Intelligence &amp; Data Science</strong>
+            at KPR College of Arts, Science and Research (July 2025 – April 2028). I work across
+            data analytics, machine learning, generative AI, backend development, and business intelligence,
+            using <strong>Python, SQL, Power BI, Pandas, NumPy, FastAPI, REST APIs, MySQL, Supabase,</strong> and Git.
+          </p>
+          <p>
+            I am also the <strong>Founder &amp; Lead Developer of SASH AI</strong> — an AI-powered Japanese
+            learning platform combining personalized learning, FSRS-6 spaced repetition, JLPT preparation,
+            speech recognition, text-to-speech, and conversational AI.
+          </p>
+          <p>
+            I enjoy building practical systems that combine data, AI, and useful user experiences.
+          </p>
+          <ul class="about__highlights">
+            <li>Data-driven problem solver</li>
+            <li>AI &amp; Data Science developer</li>
+            <li>Business intelligence &amp; analytics</li>
+            <li>Generative AI &amp; ML</li>
+            <li>Product builder / Founder</li>
+          </ul>
+
+          <!-- Languages subsection -->
+          <div class="about__languages">
+            <h4>Languages</h4>
+            <ul class="lang__list">
+              <li><span class="lang__name">Japanese</span><span class="lang__level">Self-assessed N4 level &mdash; conversational comprehension &amp; speaking (ongoing focus)</span></li>
+              <li><span class="lang__name">English</span><span class="lang__level">C1 Advanced (EF SET)</span></li>
+              <li><span class="lang__name">Tamil</span><span class="lang__level">Native</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="about__stats">
+          <div class="glass stat"><span class="stat__num" data-count="6" data-suffix="+">0</span><span class="stat__label">Major Projects</span></div>
+          <div class="glass stat"><span class="stat__num" data-count="3" data-suffix="+">0</span><span class="stat__label">AI / ML Projects</span></div>
+          <div class="glass stat"><span class="stat__num" data-count="8" data-suffix="+">0</span><span class="stat__label">Certifications</span></div>
+          <div class="glass stat"><span class="stat__num" data-count="15" data-suffix="+">0</span><span class="stat__label">Technologies</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="section__head reveal">
+        <p class="section__tag">02 &mdash; Skills</p>
+        <h2 class="section__title">Skills &amp; Tools</h2>
+      </div>
+
+      <div class="skill-categories">
+
+        <!-- Programming -->
+        <div class="skill-group reveal">
+          <h3 class="skill-group__label">Programming</h3>
+          <div class="skills">
+            <article class="glass skill">
+              <div class="skill__icon">Py</div>
+              <h4>Python</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">SQL</div>
+              <h4>SQL</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">C++</div>
+              <h4>C++</h4>
+            </article>
+          </div>
+        </div>
+
+        <!-- Data Analytics -->
+        <div class="skill-group reveal">
+          <h3 class="skill-group__label">Data Analytics</h3>
+          <div class="skills">
+            <article class="glass skill">
+              <div class="skill__icon">Pd</div>
+              <h4>Pandas</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Np</div>
+              <h4>NumPy</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Plt</div>
+              <h4>Matplotlib</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">XL</div>
+              <h4>Excel</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">BI</div>
+              <h4>Power BI</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">EDA</div>
+              <h4>Exploratory Data Analysis</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Cln</div>
+              <h4>Data Cleaning</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Sta</div>
+              <h4>Statistical Analysis</h4>
+            </article>
+          </div>
+        </div>
+
+        <!-- Machine Learning & AI -->
+        <div class="skill-group reveal">
+          <h3 class="skill-group__label">Machine Learning &amp; AI</h3>
+          <div class="skills">
+            <article class="glass skill">
+              <div class="skill__icon">ML</div>
+              <h4>Machine Learning</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">GenAI</div>
+              <h4>Generative AI</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">LLM</div>
+              <h4>LLMs</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">PE</div>
+              <h4>Prompt Engineering</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">OCR</div>
+              <h4>OCR</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">CV</div>
+              <h4>Computer Vision</h4>
+            </article>
+          </div>
+        </div>
+
+        <!-- Backend & Web -->
+        <div class="skill-group reveal">
+          <h3 class="skill-group__label">Backend &amp; Web</h3>
+          <div class="skills">
+            <article class="glass skill">
+              <div class="skill__icon">API</div>
+              <h4>FastAPI</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">REST</div>
+              <h4>REST APIs</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">HTML</div>
+              <h4>HTML</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">CSS</div>
+              <h4>CSS</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">JS</div>
+              <h4>JavaScript</h4>
+            </article>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skill-group reveal">
+          <h3 class="skill-group__label">Databases</h3>
+          <div class="skills">
+            <article class="glass skill">
+              <div class="skill__icon">My</div>
+              <h4>MySQL</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Mo</div>
+              <h4>MongoDB</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Sb</div>
+              <h4>Supabase</h4>
+            </article>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-group reveal">
+          <h3 class="skill-group__label">Tools &amp; Platforms</h3>
+          <div class="skills">
+            <article class="glass skill">
+              <div class="skill__icon">Git</div>
+              <h4>Git</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">GH</div>
+              <h4>GitHub</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Jn</div>
+              <h4>Jupyter</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Co</div>
+              <h4>Google Colab</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Lx</div>
+              <h4>Linux</h4>
+            </article>
+          </div>
+        </div>
+
+        <!-- Business Intelligence -->
+        <div class="skill-group reveal">
+          <h3 class="skill-group__label">Business Intelligence</h3>
+          <div class="skills">
+            <article class="glass skill">
+              <div class="skill__icon">PQ</div>
+              <h4>Power Query</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">DAX</div>
+              <h4>DAX</h4>
+            </article>
+            <article class="glass skill">
+              <div class="skill__icon">Viz</div>
+              <h4>Data Visualization</h4>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CURRENTLY LEARNING ===================== -->
+    <section class="section" id="learning">
+      <div class="section__head reveal">
+        <p class="section__tag">03 &mdash; Currently Learning</p>
+        <h2 class="section__title">Currently Learning</h2>
+      </div>
+
+      <div class="learning">
+        <span class="glass learning__pill reveal">Tableau</span>
+        <span class="glass learning__pill reveal">LLM Applications</span>
+        <span class="glass learning__pill reveal">Advanced Power BI</span>
+        <span class="glass learning__pill reveal">Backend / API Development</span>
+        <span class="glass learning__pill reveal">Japanese Language</span>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="section__head reveal">
+        <p class="section__tag">04 &mdash; Projects</p>
+        <h2 class="section__title">Featured Projects</h2>
+      </div>
+
+      <div class="projects">
+
+        <article class="glass project reveal">
+          <div class="project__media">
+            <img src="images/dashboard.jpg" alt="Japan tourism forecasting and analytics Power BI dashboard" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <h3>Japan Tourism Forecasting &amp; Analytics</h3>
+            <p>Analyzed 20+ years of Japan National Tourism Organization data. Built Random Forest and XGBoost forecasting models, achieving <strong>R² = 0.9366</strong> with Random Forest. Designed a four-page interactive Power BI dashboard with executive KPIs, tourism trends, forecasting visuals, and business recommendations.</p>
+            <ul class="tags"><li>Python</li><li>Random Forest</li><li>XGBoost</li><li>Power BI</li><li>Scikit-learn</li></ul>
+            <div class="project__actions">
+              <a href="https://github.com/Santhosh-DataFetch/Japan-Tourism-Forecasting" target="_blank" rel="noopener" class="btn btn--sm btn--outline">GitHub</a>
+              <span class="btn btn--sm btn--glow is-disabled" aria-disabled="true" title="Coming soon">Dashboard Preview</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project reveal">
+          <div class="project__media">
+            <img src="images/railway.png" alt="Railway passenger satisfaction analytics dashboard" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <h3>Railway Passenger Satisfaction Analytics</h3>
+            <p>Analyzed 94,000+ railway passenger records using Python, Pandas, Power BI, Power Query, and DAX. Performed end-to-end EDA, correlation analysis, delay impact analysis, and customer segmentation (loyal vs. disloyal, business vs. personal travelers). Built a 4-page Power BI dashboard with executive summaries, service quality insights, and operational recommendations.</p>
+            <ul class="tags"><li>Python</li><li>Pandas</li><li>Power BI</li><li>Power Query</li><li>DAX</li></ul>
+            <div class="project__actions">
+              <a href="https://github.com/Santhosh-DataFetch/Railway-Passenger-Satisfaction-Analytics" target="_blank" rel="noopener" class="btn btn--sm btn--outline">GitHub</a>
+              <span class="btn btn--sm btn--glow is-disabled" aria-disabled="true" title="Coming soon">Live Demo</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project reveal">
+          <div class="project__media">
+            <img src="images/ncr rides.png" alt="NCR ride bookings analysis Power BI dashboard" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <h3>NCR Ride Bookings Analysis</h3>
+            <p>Built a 3-page interactive Power BI dashboard analyzing 150K+ ride bookings in NCR. Created KPIs including Completion Rate, Cancellation %, Average VTAT, Revenue per km, and Ratings. Developed demand heatmaps, cancellations analysis, and payment behavior insights with actionable business recommendations.</p>
+            <ul class="tags"><li>Power BI</li><li>DAX</li><li>KPIs</li><li>Data Visualization</li></ul>
+            <div class="project__actions">
+              <a href="https://github.com/Santhosh-DataFetch/NCR-Ride-Bookings-Analysis" target="_blank" rel="noopener" class="btn btn--sm btn--outline">GitHub</a>
+              <span class="btn btn--sm btn--glow is-disabled" aria-disabled="true" title="Coming soon">Live Demo</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project reveal">
+          <div class="project__media project__media--placeholder">
+            <div class="project__placeholder-icon">🤖</div>
+          </div>
+          <div class="project__body">
+            <h3>FitBuddy &mdash; AI Fitness Plan Generator</h3>
+            <p>AI-powered fitness planning application generating personalized workout plans using structured AI generation via Gemini AI. Implemented validation and fallback logic, plan adaptation, exercise replacement, progress tracking, feedback-driven recommendations, authentication, persistence, and row-level security (RLS) using Supabase.</p>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>Gemini AI</li><li>Supabase</li><li>REST API</li></ul>
+            <div class="project__actions">
+              <span class="btn btn--sm btn--glow is-disabled" aria-disabled="true" title="Coming soon">GitHub</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project reveal">
+          <div class="project__media project__media--placeholder">
+            <div class="project__placeholder-icon">🏺</div>
+          </div>
+          <div class="project__body">
+            <h3>Voice of Stones &mdash; Tamil Inscription Reader</h3>
+            <p>Machine learning system for reading and interpreting historical Tamil inscriptions from images. Built an OCR and image-processing workflow to extract inscription text and improve accessibility of historical records. Designed a user-facing interface to present extracted content.</p>
+            <ul class="tags"><li>Machine Learning</li><li>OCR</li><li>Computer Vision</li><li>Python</li></ul>
+            <div class="project__actions">
+              <span class="btn btn--sm btn--glow is-disabled" aria-disabled="true" title="Coming soon">GitHub</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience">
+      <div class="section__head reveal">
+        <p class="section__tag">05 &mdash; Experience</p>
+        <h2 class="section__title">Experience</h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- SASH AI — Featured / Founder entry -->
+        <div class="timeline__item timeline__item--featured reveal">
+          <div class="timeline__dot timeline__dot--accent"></div>
+          <div class="glass timeline__card timeline__card--featured">
+            <div class="timeline__card-header">
+              <span class="timeline__date">2026 &ndash; Present</span>
+              <span class="timeline__badge">Founder &amp; Lead Developer</span>
+            </div>
+            <h3>SASH AI <span class="timeline__company">— Independent Product</span></h3>
+            <p class="timeline__tagline">AI-powered Japanese learning platform</p>
+            <ul class="timeline__bullets">
+              <li>Founded and lead development of SASH AI, an AI-powered Japanese learning platform combining personalized learning, JLPT preparation, FSRS-6 spaced repetition, and conversational voice AI.</li>
+              <li>Designed and implemented AI-assisted learning workflows, speech recognition, text-to-speech, and interactive language-learning experiences.</li>
+              <li>Lead product architecture, feature development, testing, and iteration across the platform.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CodSoft -->
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass timeline__card">
+            <span class="timeline__date">July 2026 &ndash; August 2026 &middot; 4-Week Virtual Internship</span>
+            <h3>Data Science Intern <span class="timeline__company">— CodSoft</span></h3>
+            <ul class="timeline__bullets">
+              <li>Completed a 4-week virtual Data Science internship through project-based assignments and practical data science tasks.</li>
+              <li>Applied Python, data analysis, and machine learning concepts to complete internship projects and deliverables.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Deloitte -->
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass timeline__card">
+            <span class="timeline__date">July 2026 &middot; Job Simulation &middot; Forage</span>
+            <h3>Data Analytics Job Simulation <span class="timeline__company">— Deloitte Australia</span></h3>
+            <ul class="timeline__bullets">
+              <li>Cleaned and analyzed business datasets to identify trends and support data-driven decision-making.</li>
+              <li>Created interactive dashboards and visualizations to communicate insights to stakeholders.</li>
+              <li>Prepared a client-ready presentation summarizing key findings and business recommendations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tata -->
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass timeline__card">
+            <span class="timeline__date">July 2026 &middot; Job Simulation &middot; Forage</span>
+            <h3>Business Insights Job Simulation <span class="timeline__company">— Tata Data Visualisation</span></h3>
+            <ul class="timeline__bullets">
+              <li>Created data visualizations for Tata Consultancy Services executive decision-making.</li>
+              <li>Prepared 8+ questions for a senior leadership meeting and delivered actionable visual insights.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pawzz Foundation -->
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass timeline__card">
+            <span class="timeline__date">January 2026 &middot; Volunteer</span>
+            <h3>Fundraiser <span class="timeline__company">— Pawzz Foundation</span></h3>
+            <ul class="timeline__bullets">
+              <li>Called and communicated with donors to raise funds for stray dog welfare initiatives, collecting ₹630 in donations.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATIONS ===================== -->
+    <section class="section" id="certifications">
+      <div class="section__head reveal">
+        <p class="section__tag">06 &mdash; Certifications</p>
+        <h2 class="section__title">Certifications</h2>
+      </div>
+
+      <!-- Formal Certifications -->
+      <p class="certs__group-label reveal">Formal Certifications</p>
+      <div class="certs">
+
+        <!-- Clickable: FutureSkills GenAI — has image -->
+        <button class="glass cert cert--clickable reveal"
+          data-img="images/cert-genai.png"
+          data-title="Generative AI with Google Cloud Data"
+          data-meta="FutureSkills Prime (MeitY / NASSCOM) &bull; Gold Category &bull; Oct 2026"
+          aria-label="View certificate: Generative AI with Google Cloud Data">
+          <div class="cert__thumb">
+            <img src="images/cert-genai.png" alt="FutureSkills Prime — Generative AI with Google Cloud Data certificate thumbnail" loading="lazy" />
+          </div>
+          <div class="cert__info">
+            <div class="cert__badge cert__badge--gold">Gold</div>
+            <h3>Generative AI with Google Cloud Data</h3>
+            <p>FutureSkills Prime &bull; Oct 2026</p>
+          </div>
+        </button>
+
+        <!-- Clickable: FutureSkills STEM — has image -->
+        <button class="glass cert cert--clickable reveal"
+          data-img="images/cert-stem.png"
+          data-title="Digital Application Fundamentals — STEM"
+          data-meta="FutureSkills Prime (MeitY / NASSCOM) &bull; Gold Category &bull; Oct 2026"
+          aria-label="View certificate: Digital Application Fundamentals — STEM">
+          <div class="cert__thumb">
+            <img src="images/cert-stem.png" alt="FutureSkills Prime — Digital Application Fundamentals STEM certificate thumbnail" loading="lazy" />
+          </div>
+          <div class="cert__info">
+            <div class="cert__badge cert__badge--gold">Gold</div>
+            <h3>Digital Application Fundamentals &mdash; STEM</h3>
+            <p>FutureSkills Prime &bull; Oct 2026</p>
+          </div>
+        </button>
+
+        <!-- CodSoft — no image on file, text card -->
+        <div class="glass cert reveal">
+          <div class="cert__badge">CS</div>
+          <div class="cert__info">
+            <h3>Data Science Virtual Internship</h3>
+            <p>CodSoft &bull; 4 Weeks &bull; Aug 2026</p>
+          </div>
+        </div>
+
+        <div class="glass cert reveal">
+          <div class="cert__badge">MS</div>
+          <div class="cert__info">
+            <h3>Career Essentials in Data Analysis</h3>
+            <p>Microsoft &amp; LinkedIn &bull; Aug 2025</p>
+          </div>
+        </div>
+
+        <div class="glass cert reveal">
+          <div class="cert__badge">MA</div>
+          <div class="cert__info">
+            <h3>MySQL for Data Analysis</h3>
+            <p>Maven Analytics &bull; Jun 2026</p>
+          </div>
+        </div>
+
+        <div class="glass cert reveal">
+          <div class="cert__badge">XL</div>
+          <div class="cert__info">
+            <h3>Advanced Excel</h3>
+            <p>Value Added Course &bull; Jun 2026</p>
+          </div>
+        </div>
+
+        <div class="glass cert reveal">
+          <div class="cert__badge">EF</div>
+          <div class="cert__info">
+            <h3>EF SET English Certificate</h3>
+            <p>EF SET &bull; C1 Advanced &bull; Nov 2025</p>
+          </div>
+        </div>
+
+        <div class="glass cert reveal">
+          <div class="cert__badge">My</div>
+          <div class="cert__info">
+            <h3>Data Analytics Certificate</h3>
+            <p>Maiyyam &bull; Oct 2025</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Job Simulations — visually separate -->
+      <p class="certs__group-label certs__group-label--secondary reveal">Virtual Job Simulations</p>
+      <div class="certs certs--secondary">
+
+        <div class="glass cert reveal">
+          <div class="cert__badge">D</div>
+          <div class="cert__info">
+            <h3>Data Analytics Job Simulation</h3>
+            <p>Deloitte Australia &bull; Forage &bull; Jul 2026</p>
+          </div>
+        </div>
+
+        <div class="glass cert reveal">
+          <div class="cert__badge">T</div>
+          <div class="cert__info">
+            <h3>Data Visualisation Job Simulation</h3>
+            <p>Tata Consultancy Services &bull; Forage &bull; Jul 2026</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section class="section" id="education">
+      <div class="section__head reveal">
+        <p class="section__tag">07 &mdash; Education</p>
+        <h2 class="section__title">Education</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass timeline__card">
+            <span class="timeline__date">July 2025 &ndash; April 2028 (Expected)</span>
+            <h3>B.Sc. Artificial Intelligence &amp; Data Science</h3>
+            <p>KPR College of Arts, Science and Research &mdash; focused on AI, data analytics, statistics, machine learning, database management, and big data analytics. Last semester: 76%.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="glass timeline__card">
+            <span class="timeline__date">Higher Secondary</span>
+            <h3>Government Higher Secondary School, Iduvampalayam</h3>
+            <p>Completed Higher Secondary Education.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="section__head reveal">
+        <p class="section__tag">08 &mdash; Contact</p>
+        <h2 class="section__title">Get In Touch</h2>
+      </div>
+
+      <div class="contact">
+        <div class="contact__cards">
+          <a href="mailto:santhosh.25bscaids@kprcas.ac.in" class="glass contact__card reveal">
+            <span class="contact__icon">✉</span>
+            <div><h3>Email</h3><p>santhosh.25bscaids@kprcas.ac.in</p></div>
+          </a>
+          <a href="https://www.linkedin.com/in/santhosh-analytics-/" target="_blank" rel="noopener" class="glass contact__card reveal">
+            <span class="contact__icon">in</span>
+            <div><h3>LinkedIn</h3><p>/in/santhosh-analytics-</p></div>
+          </a>
+          <a href="https://github.com/Santhosh-DataFetch/" target="_blank" rel="noopener" class="glass contact__card reveal">
+            <span class="contact__icon">GH</span>
+            <div><h3>GitHub</h3><p>@Santhosh-DataFetch</p></div>
+          </a>
+          <a href="https://santhosh-portfo.netlify.app/" target="_blank" rel="noopener" class="glass contact__card reveal">
+            <span class="contact__icon">🌐</span>
+            <div><h3>Portfolio</h3><p>santhosh-portfo.netlify.app</p></div>
+          </a>
+        </div>
+
+        <form class="glass contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Say hello..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--glow btn--full">Send Message</button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__social">
+      <a href="https://github.com/Santhosh-DataFetch/" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/santhosh-analytics-/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="mailto:santhosh.25bscaids@kprcas.ac.in" aria-label="Email">✉</a>
+    </div>
+    <p>&copy; <span id="year"></span> Santhosh S. Built with HTML, CSS &amp; JavaScript.</p>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
